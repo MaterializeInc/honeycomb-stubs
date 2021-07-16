@@ -1,4 +1,5 @@
 from typing import Any, Optional, Tuple
+
 from beeline.propagation import PropagationContext, Request
 
 def http_trace_parser_hook(request: Request) -> Optional[PropagationContext]: ...

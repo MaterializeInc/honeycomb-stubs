@@ -1,8 +1,10 @@
-from typing import Any, Callable, Iterator, Optional, Tuple
+from collections import defaultdict
 from contextlib import contextmanager
 from random import SystemRandom
-from libhoney import Client, Event
+from typing import Any, Callable, Iterator, Optional, Tuple
+
 from beeline.propagation import PropagationContext, Request
+from libhoney import Client, Event
 
 MAX_INT32: int = ...
 SPAN_ID_BYTES: int = ...
@@ -58,6 +60,11 @@ class SynchronousTracer(Tracer):
     def __init__(self, client: Client) -> None: ...
 
 class Span:
+    trace_id: str
+    parent_id: str
+    id: str
+    event: Event
+    rollup_fields: defaultdict[str, float]
     def __init__(
         self, trace_id: str, parent_id: str, id: str, event: Event, is_root: bool = ...
     ) -> None: ...

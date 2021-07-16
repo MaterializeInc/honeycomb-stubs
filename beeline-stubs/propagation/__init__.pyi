@@ -1,17 +1,17 @@
-from typing import Any, TypedDict
 from abc import ABCMeta, abstractmethod
+from typing import Any, Optional, TypedDict
 
 class PropagationContext:
     trace_id: str
     parent_id: str
     trace_fields: dict[str, Any]
-    dataset: str
+    dataset: Optional[str]
     def __init__(
         self,
         trace_id: str,
         parent_id: str,
         trace_fields: dict[str, Any] = ...,
-        dataset: str = ...,
+        dataset: Optional[str] = ...,
     ) -> None: ...
 
 class Request(metaclass=ABCMeta):
