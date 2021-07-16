@@ -6,13 +6,21 @@ import beeline.propagation.honeycomb
 from beeline.propagation import PropagationContext, Request
 from beeline.trace import Span, SynchronousTracer, Tracer
 from beeline.version import VERSION
-from libhoney import Response, Transmission
+from libhoney import Client, Response, Transmission
 
 USER_AGENT_ADDITION: str = ...
 
 _F = TypeVar("_F", bound=Callable[..., Any])
 
 class Beeline:
+    client: Client
+    tracer_impl: Tracer
+    presend_hook: Callable[[dict[str, Any]], None]
+    sampler_hook: Callable[[dict[str, Any]], Tuple[bool, int]]
+    http_trace_parser_hook: Callable[[Request], Optional[PropagationContext]]
+    http_trace_propagation_hook: Callable[
+        [PropagationContext], Optional[dict[str, str]]
+    ]
     def __init__(
         self,
         writekey: str = ...,
