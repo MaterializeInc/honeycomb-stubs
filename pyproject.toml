@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "honeycomb-stubs"
-version = "0.2.0"
+version = "0.2.1"
 description = "Type stubs for the libhoney and beeline packages"
 repository = "https://github.com/benesch/honeycomb-stubs"
 authors = ["Nikhil Benesch <nikhil.benesch@gmail.com>"]
