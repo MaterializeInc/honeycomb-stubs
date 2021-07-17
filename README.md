@@ -1,6 +1,6 @@
 # honeycomb-stubs
 
-![PyPI](https://img.shields.io/pypi/v/honeycomb-stubs)
+[![PyPI](https://img.shields.io/pypi/v/honeycomb-stubs)](https://pypi.org/project/honeycomb-stubs/)
 
 Python type stubs for:
 
