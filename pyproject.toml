@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "honeycomb-stubs"
-version = "0.2.1"
+version = "0.2.2"
 description = "Type stubs for the libhoney and beeline packages"
 repository = "https://github.com/benesch/honeycomb-stubs"
 authors = ["Nikhil Benesch <nikhil.benesch@gmail.com>"]
@@ -14,8 +14,8 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.9"
-honeycomb-beeline = "^2.17.0"
-libhoney = "^1.11.0"
+honeycomb-beeline = "^3.0.0"
+libhoney = "^2.0.0"
 
 [tool.poetry.dev-dependencies]
 black = "^21.6b0"
